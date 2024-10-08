@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "7079b8cb-0f1a-4270-9b7a-57cb12110ac1",
+		"name": "API REST - BEMBOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34768568"
+	},
+	"item": [
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Listar Producto Por Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/producto/nombre?nombre=Hamburguesa%20Cl%C3%A1sica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"producto",
+								"nombre"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Hamburguesa%20Cl%C3%A1sica"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Producto por Stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/producto/stock?stockInicial=25&stockFinal=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"producto",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "stockInicial",
+									"value": "25"
+								},
+								{
+									"key": "stockFinal",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Prodcuto Por Categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/producto/nombre-categoria?idCategoria=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"producto",
+								"nombre-categoria"
+							],
+							"query": [
+								{
+									"key": "idCategoria",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Productos Por Precio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/producto/producto-precio?precio=14.00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"producto",
+								"producto-precio"
+							],
+							"query": [
+								{
+									"key": "precio",
+									"value": "14.00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Caramelo de China\",\r\n    \"precio\": 150.0,\r\n    \"stock\": 10,\r\n    \"descripcion\": \"Nuevos Caramelos Chinos\",\r\n    \"categoria\": {\r\n        \"idcategoria\": 1 }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/producto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"producto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Listar Categorias Por Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/categoria?nombre=Hamburguesas&=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"categoria"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Hamburguesas"
+								},
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Categoria por Contenido Descripcion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/categoria/descripcion?descripcion=Hamburguesas de carne de res y pollo&=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"categoria",
+								"descripcion"
+							],
+							"query": [
+								{
+									"key": "descripcion",
+									"value": "Hamburguesas de carne de res y pollo"
+								},
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Bebidas Artesanales\",\r\n    \"descripcion\": \"Pichicancha  nueva\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/categoria/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"categoria",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Listar Cliente por Ciudad y Pais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/cliente/ciudad-pais?ciudad=Arequipa&pais=Perú",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								"ciudad-pais"
+							],
+							"query": [
+								{
+									"key": "ciudad",
+									"value": "Arequipa"
+								},
+								{
+									"key": "pais",
+									"value": "Perú"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ordenar Nombre Cliente ASC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/cliente/nombre-asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								"nombre-asc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Jose Abraham Melano Pacco\",\r\n    \"email\": \"jose.abramelano@gmail.com\",\r\n    \"telefono\": \"123456789\",\r\n    \"direccion\": \"Av. Ejercito 123\",\r\n    \"pais\": \"Perú\",\r\n    \"ciudad\": \"Oxapampa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrdenCompra",
+			"item": [
+				{
+					"name": "Listar Ordenes de Compra (query Nativo)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orden-compra",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orden-compra"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
